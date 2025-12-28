@@ -4,11 +4,11 @@ A minimal calendar management system that allows users to create, view, and mana
 
 ## Features
 
-- ✅ **Event Management**: Create, update, and delete calendar events
-- ✅ **Conflict Detection**: Automatically prevents overlapping events
-- ✅ **Weekly Calendar View**: Navigate forward and backward through weeks
-- ✅ **Timezone Support**: Full timezone-aware date/time handling
-- ✅ **User-Friendly UI**: Clean, modern interface for managing events
+- **Event Management**: Create, update, and delete calendar events
+- **Conflict Detection**: Automatically prevents overlapping events
+- **Weekly Calendar View**: Navigate forward and backward through weeks
+- **Timezone Support**: Full timezone-aware date/time handling
+- **User-Friendly UI**: Clean, modern interface for managing events
 
 ## Architecture Overview
 ### Tech Stack
