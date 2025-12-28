@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📅 Calendar Management System</h1>
+            <div class="timezone-selector">
+                <label for="timezone">Timezone:</label>
+                <select id="timezone">
+                    <option value="UTC">UTC</option>
+                    <option value="America/New_York">Eastern Time (ET)</option>
+                    <option value="America/Chicago">Central Time (CT)</option>
+                    <option value="America/Denver">Mountain Time (MT)</option>
+                    <option value="America/Los_Angeles">Pacific Time (PT)</option>
+                    <option value="Europe/London">London (GMT)</option>
+                    <option value="Europe/Paris">Paris (CET)</option>
+                    <option value="Asia/Kolkata">India (IST)</option>
+                    <option value="Asia/Tokyo">Tokyo (JST)</option>
+                    <option value="Asia/Shanghai">Shanghai (CST)</option>
+                </select>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="calendar-section">
+                <div class="week-navigation">
+                    <button id="prev-week">← Previous Week</button>
+                    <h2 id="week-range"></h2>
+                    <button id="next-week">Next Week →</button>
+                </div>
+                
+                <div class="calendar-grid" id="calendar-grid">
+                    <!-- Calendar days will be populated by JavaScript -->
+                </div>
+                
+                <div id="conflict-message" class="error-message" style="display: none;"></div>
+            </div>
+
+            <div class="event-form-section">
+                <h3 id="form-title">Create New Event</h3>
+                
+                <!-- NLP Chat Box -->
+                <div class="nlp-chat-box">
+                    <div class="nlp-header">
+                        <span>💬 Natural Language Input</span>
+                        <button type="button" id="toggle-nlp" class="toggle-btn">Hide</button>
+                    </div>
+                    <div id="nlp-container" class="nlp-container">
+                        <div class="nlp-examples">
+                            <small>Try: "Meeting tomorrow at 2pm" or "Lunch next Friday at 12:30"</small>
+                        </div>
+                        <div class="nlp-input-group">
+                            <input type="text" id="nlp-input" placeholder="Type event description in natural language..." 
+                                   autocomplete="off">
+                            <button type="button" id="nlp-parse-btn" class="nlp-parse-btn">Parse</button>
+                        </div>
+                        <div id="nlp-preview" class="nlp-preview" style="display: none;"></div>
+                    </div>
+                </div>
+                
+                <form id="event-form">
+                    <input type="hidden" id="event-id">
+                    
+                    <label for="event-title">Title *</label>
+                    <input type="text" id="event-title" required>
+                    
+                    <label for="event-description">Description</label>
+                    <textarea id="event-description" rows="3"></textarea>
+                    
+                    <label for="event-start-date">Start Date *</label>
+                    <input type="date" id="event-start-date" required>
+                    
+                    <label for="event-start-time">Start Time *</label>
+                    <input type="time" id="event-start-time" required>
+                    
+                    <label for="event-end-date">End Date *</label>
+                    <input type="date" id="event-end-date" required>
+                    
+                    <label for="event-end-time">End Time *</label>
+                    <input type="time" id="event-end-time" required>
+                    
+                    <div class="form-buttons">
+                        <button type="submit" id="submit-btn">Create Event</button>
+                        <button type="button" id="cancel-btn" style="display: none;">Cancel</button>
+                        <button type="button" id="delete-btn" style="display: none;" class="delete-btn">Delete Event</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="message" class="message" style="display: none;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
