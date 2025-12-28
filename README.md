@@ -169,29 +169,26 @@ curl -X POST http://127.0.0.1:5000/api/events \
   -d '{
     "title": "Meeting",
     "description": "Team sync",
-    "start_time": "2024-01-15T14:00:00",
-    "end_time": "2024-01-15T15:00:00",
-    "timezone": "America/New_York"
+    "start_time": "2025-12-28T14:00:00",
+    "end_time": "2025-12-28T15:00:00",
+    "timezone": "Asia/Kolkata"
   }'
 ```
 
 ### Get Weekly View
 
 ```bash
-curl "http://127.0.0.1:5000/api/events/week?start_date=2024-01-15&timezone=America/New_York"
+curl.exe "http://127.0.0.1:5000/api/events/week?timezone=Asia/Kolkata"
+
 ```
 
 ### Update Event
 
 ```bash
-curl -X PUT http://127.0.0.1:5000/api/events/1 \
-  -H "Content-Type: application/json" \
-  -d '{
-    "title": "Updated Meeting",
-    "start_time": "2024-01-15T15:00:00",
-    "end_time": "2024-01-15T16:00:00",
-    "timezone": "America/New_York"
-  }'
+curl.exe -X POST "http://127.0.0.1:5000/api/events" `
+  -H "Content-Type: application/json" `
+  -d "{\"title\":\"My First Event\",\"start_time\":\"2025-12-28T10:00:00\",\"end_time\":\"2025-12-28T11:00:00\",\"timezone\":\"Asia/Kolkata\"}"
+
 ```
 
 ### Delete Event
